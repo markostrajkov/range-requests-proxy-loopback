@@ -1,0 +1,9 @@
+version: '2'
+services:
+  range-request-proxy-loopback:
+    build: .
+    command: python /usr/local/range-requests-proxy/loopback_server.py
+    ports:
+     - "9000:9000"
+    volumes:
+     - .:/usr/local/range-requests-proxy-loopback
