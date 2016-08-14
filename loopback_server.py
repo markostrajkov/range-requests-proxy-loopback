@@ -24,8 +24,8 @@ class FileHandler(tornado.web.RequestHandler):
             pass
 
         try:
-            file_size = os.stat(PROXY_DATA + self.request.uri).st_size
-            with open(PROXY_DATA + self.request.uri, 'rb') as f:
+            file_size = os.stat(PROXY_DATA + self.request.path).st_size
+            with open(PROXY_DATA + self.request.path, 'rb') as f:
                 data = f.read()[start:end]
 
             self.set_header('Content-Type', 'image/jpeg')
